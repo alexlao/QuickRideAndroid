@@ -6,7 +6,8 @@ if($_SERVER['REQUEST_METHOD']==='GET'){
 	echo json_encode($json);
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$json = array('response' => 'response from post');
+	$json = array('response' =>'Hi '.  $_POST["name"]); 
 	echo json_encode($json);
 }
+
 ?>

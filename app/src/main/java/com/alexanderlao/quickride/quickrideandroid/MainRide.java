@@ -78,8 +78,7 @@ public class MainRide extends AppCompatActivity {
         params.put("name", "alex");
         params.put("address", "4628 fillingame drive");
         params.put("userGroup", "myGroup");
-        JSONObject postThis = new JSONObject(params);
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.POST, php, postThis,new Response.Listener<JSONObject>(){
+        CustomRequest jsObjRequest = new CustomRequest(Request.Method.POST, php, params, new Response.Listener<JSONObject>(){
             public void onResponse(JSONObject response) {
                 try {
                     name.setText(response.getString("response"));
@@ -93,6 +92,7 @@ public class MainRide extends AppCompatActivity {
                 Log.e("RESPONSE ERROR", error.getMessage());
             }
         });
+
         queue.add(jsObjRequest);
     }
 
