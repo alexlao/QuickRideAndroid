@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context="com.alexanderlao.quickride.quickrideandroid.MainRide">
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/nameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Address" />
+        android:text="Name" />
 
     <EditText
         android:id="@+id/addressText"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Address" />
 
     <Button
         android:id="@+id/button"

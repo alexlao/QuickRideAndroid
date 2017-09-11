@@ -1,5 +1,6 @@
 package com.alexanderlao.quickride.quickrideandroid;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,8 +20,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainRide extends AppCompatActivity {
+public class MainRide extends Activity {
     private EditText name;
+    private EditText address;
     private Button go;
     private Button post;
 
@@ -31,7 +33,8 @@ public class MainRide extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ride);
-        name = (EditText) findViewById(R.id.addressText);
+        address = (EditText) findViewById(R.id.addressText);
+        name = (EditText) findViewById(R.id.nameText);
         go = (Button) findViewById(R.id.button);
         go.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -75,8 +78,8 @@ public class MainRide extends AppCompatActivity {
     public void postInfo(){
         Log.e("Pressed", "Button Pressed");
         Map<String, String> params = new HashMap();
-        params.put("name", "alex");
-        params.put("address", "4628 fillingame drive");
+        params.put("name", name.getText().toString());
+        params.put("address", address.getText().toString());
         params.put("userGroup", "myGroup");
         CustomRequest jsObjRequest = new CustomRequest(Request.Method.POST, php, params, new Response.Listener<JSONObject>(){
             public void onResponse(JSONObject response) {
