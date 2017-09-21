@@ -2,7 +2,7 @@
 # $json = array('response'=>'Hello this is a test');
 $servername = "localhost";
 $username = "alexaqj1_admin";
-$pw = "Al3xL4oz!!";
+$pw = "";
 $dbname = "alexaqj1_quickRide";
 
 $connection = new mysqli($servername, $username, $pw, $dbname);
